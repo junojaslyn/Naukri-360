@@ -1,0 +1,23 @@
+HATE EQUALITY
+Key Logic
+->If all characters in S are the same, then any shuffle of T will still be identical to S → return 0
+->If at least two different characters exist, you can rearrange them to form a different string → return 1
+->If N = 1, only one permutation exists → return 0
+
+CODE IN JAVA
+
+public class Solution {
+
+    public static int canYouMakeDifference(int n, String s) {
+        if (n == 1) {
+            return 0;
+        }
+        char first = s.charAt(0);
+        for (int i = 1; i < n; i++) {
+            if (s.charAt(i) != first) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+}
